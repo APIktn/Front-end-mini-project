@@ -16,7 +16,7 @@ function HomePage() {
   const getPosts = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:4001/trips?keywords=${searchText}`
+        `${import.meta.env.VITE_API_URL}/trips?keywords=${searchText}`
       );
       console.log(result);
       setResults(result.data.data);
