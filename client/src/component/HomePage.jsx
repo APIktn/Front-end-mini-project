@@ -16,7 +16,7 @@ function HomePage() {
   const getPosts = async () => {
     try {
       const result = await axios.get(
-        `front-end-mini-project-server-dh8xe966y-apiktns-projects.vercel.app/trips?keywords=${searchText}`
+        `https://front-end-mini-project-server-dh8xe966y-apiktns-projects.vercel.app/trips?keywords=${searchText}`
       );
       console.log(result);
       setResults(result.data.data);
