@@ -6,7 +6,14 @@ import trips from "./db.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(cors());
+// Configure CORS options to allow requests only from your front-end URL
+const corsOptions = {
+  origin:
+    "https://front-end-mini-project-b31jkp6f0-apiktns-projects.vercel.app", // Change this to your front-end URL
+  optionsSuccessStatus: 200, // For legacy browser support
+};
+
+app.use(cors(corsOptions)); // Apply CORS with options
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
